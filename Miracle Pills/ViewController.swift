@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     let states = ["Alaska", "Alabama", "Arkansas", "California", "Colorado", "Florida", "Maine", "Ney York", "Kansas"]
     
+    @IBOutlet weak var whiteErase: UIView!
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickerBtn: UIButton!
     
@@ -19,6 +20,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var zipCodeLabel: UILabel!
     @IBOutlet weak var zipCodeTextField: UITextField!
+    @IBOutlet weak var successImg: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func stateBtnPressed(_ sender: Any) {
         
         hideButtons(state: true)
+    }
+    
+    @IBAction func buyBtnPressed(_ sender: Any) {
+        whiteErase.isHidden = false
+        successImg.isHidden = false
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
